@@ -9,7 +9,7 @@ session = cluster.connect('rss_data')
 @app.route('/')
 def home():
     rows = session.execute('SELECT * FROM lemonde_data LIMIT 10')
-    return render_template('index.html', rows=rows)
+    return render_template('templates/index.html', rows=rows)
 
 if __name__ == '__main__':
     app.run(debug=True)
