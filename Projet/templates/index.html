@@ -2,9 +2,37 @@
 <html>
 <head>
     <title>Mon application Flask</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #004d40;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <h1>Dernières nouvelles</h1>
+    <h1>Les 10 derniers articles à la une sur Le Monde</h1>
     <table>
         <tr>
             <th>ID</th>
@@ -17,7 +45,7 @@
         <tr>
             <td>{{ row.id }}</td>
             <td>{{ row.title }}</td>
-            <td>{{ row.link }}</td>
+            <td><a href="{{ row.link }}" target="_blank">{{ row.link }}</a></td>
             <td>{{ row.pubdate }}</td>
             <td>{{ row.description }}</td>
         </tr>
